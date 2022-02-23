@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    padding: 50px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow:  0px 10px 10px -6px black;
+}
+div{
+    display: flow-root;
+    justify-content: center;
+    margin-left: 25%;
+    width: 900px;
+}
+h1{
+    text-align: center;
+}
+h3{
+    /* margin-left: 20px; */
+    display: flex;
+    justify-content: center;
+}
+span{
+    color: red;
+}
