@@ -30,23 +30,24 @@ document.addEventListener("DOMContentLoaded", function () {
         {img: "img/otro.png",
         name: "otro"
     },
-        {img: "img/netzuko.png",
-        name: "netzuko"
-    },
-        {img: "img/corazon.png",
-        name: "corazon"
-    }
-    ]
+    {img: "img/netzuko.png",
+    name: "netzuko"
+},
+{img: "img/corazon.png",
+name: "corazon"
+}
+]
 
-    let tablero = document.querySelector(".tablero");
-    let imgElegida = [];
-    let imgElegidaID = [];
+let tablero = document.querySelector(".tablero");
+let imgElegida = [];
+let imgElegidaID = [];
     let aciertos = document.querySelector(".conteo");
     let conteo = [];
-
-    images.sort( ()=>0.5 - Math.random());
+    
     //funcion para colocar las imagenes en el html
     function crearTablero() {
+        images.sort( ()=>0.5 - Math.random());
+        
         for (let i = 0; i < images.length; i++) {
             var img = document.createElement("img");
             img.setAttribute("data-id", i);
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (imgElegida[0] === imgElegida[1]) {
             alert("buena mi prro");
             console.log(todasLasImg[opcion1] +" y "+ opcion2);
-
+            
             todasLasImg[opcion1].setAttribute("src", "img/chulo-naranja.png");
             todasLasImg[opcion2].setAttribute("src", "img/chulo-naranja.png");
             conteo.push(imgElegida);
@@ -96,8 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (conteo.length === 6){
             aciertos.textContent = " Ganaste ";
+            conteo.length = 0;
+            location.reload();
         }
     }
-
     crearTablero();
 });

@@ -12,6 +12,7 @@ img{
 div{
     display: flow-root;
     justify-content: center;
+    flex-wrap: wrap;
     margin-left: 25%;
     width: 900px;
 }
