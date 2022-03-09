@@ -47,6 +47,7 @@ let imgElegidaID = [];
     //funcion para colocar las imagenes en el html
     function crearTablero() {
         images.sort( ()=>0.5 - Math.random());
+        // setTimeout(crearTablero, 500);
         
         for (let i = 0; i < images.length; i++) {
             var img = document.createElement("img");
@@ -77,13 +78,16 @@ let imgElegidaID = [];
         let opcion1 = imgElegidaID[0];
         let opcion2 = imgElegidaID[1]; 
         
-        if (imgElegida[0] === imgElegida[1]) {
+        if (imgElegida[0] === imgElegida[1] && imgElegidaID[0] !== imgElegidaID[1]) {
             alert("buena mi prro");
             console.log(todasLasImg[opcion1] +" y "+ opcion2);
             
             todasLasImg[opcion1].setAttribute("src", "img/chulo-naranja.png");
             todasLasImg[opcion2].setAttribute("src", "img/chulo-naranja.png");
             conteo.push(imgElegida);
+
+            todasLasImg[opcion1].removeEventListener("click", descubrirImagen);
+            todasLasImg[opcion2].removeEventListener("click", descubrirImagen);
         }
         else {
             alert("sigue intentando");
